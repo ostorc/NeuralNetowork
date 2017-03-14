@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetwork", "NeuralNetwork\NeuralNetwork.csproj", "{AE95478B-A093-483A-9129-A5C8A8F6B7D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetwork.MINST.Processing", "NeuralNetwork.MINST.Processing\NeuralNetwork.MINST.Processing.csproj", "{50BC9C38-5CC6-4744-BE6E-C0BA2319106A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNetwork.Images.Viewer", "NeuralNetwork.Images.Viewer\NeuralNetwork.Images.Viewer.csproj", "{0A5F8F1D-5B7E-4957-B17B-4E28DD25EE41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE95478B-A093-483A-9129-A5C8A8F6B7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE95478B-A093-483A-9129-A5C8A8F6B7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE95478B-A093-483A-9129-A5C8A8F6B7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE95478B-A093-483A-9129-A5C8A8F6B7D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50BC9C38-5CC6-4744-BE6E-C0BA2319106A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50BC9C38-5CC6-4744-BE6E-C0BA2319106A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50BC9C38-5CC6-4744-BE6E-C0BA2319106A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50BC9C38-5CC6-4744-BE6E-C0BA2319106A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A5F8F1D-5B7E-4957-B17B-4E28DD25EE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A5F8F1D-5B7E-4957-B17B-4E28DD25EE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A5F8F1D-5B7E-4957-B17B-4E28DD25EE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A5F8F1D-5B7E-4957-B17B-4E28DD25EE41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
