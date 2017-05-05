@@ -3,41 +3,43 @@ using System.IO;
 
 namespace NeuralNetwork
 {
-    internal static class Helpers
+    /// <summary>
+    /// Helpers for traing of neural networks and neurons
+    /// </summary>
+    public static class Helpers
     {
         private static readonly System.Random Rand = new System.Random();
 
+        /// <summary>
+        /// Random Helper
+        /// </summary>
         public static class Random
         {
-            public static int Next()
-            {
-                return Rand.Next();
-            }
-
-            public static int Next(int minValue, int maxValue)
-            {
-                return Rand.Next(minValue, maxValue);
-            }
-
-            public static int Next(int maxValue)
-            {
-                return Rand.Next(maxValue);
-            }
-
+            /// <summary>
+            /// Random number between 0.0 and 1.0
+            /// </summary>
+            /// <returns>Random number between 0.0 and 1.0</returns>
             public static double NextDouble()
             {
                 return Rand.NextDouble();
             }
-
-            public static void NextBytes(byte[] buffer)
-            {
-                Rand.NextBytes(buffer);
-            }
         }
-
+        /// <summary>
+        /// Activations functions of neurons
+        /// </summary>
         public static class ActivationFunction
         {
+            /// <summary>
+            /// Step function
+            /// </summary>
+            /// <param name="x">Input value</param>
+            /// <returns>Result of function</returns>
             public static double Step(double x) => x < 0 ? 0 : 1;
+            /// <summary>
+            /// Sigmoid function
+            /// </summary>
+            /// <param name="x">Input value</param>
+            /// <returns>Result of function</returns>
             public static double Sigmoid(double x) => 1 / (1 + Math.Pow(Math.E, -x));
         }
 

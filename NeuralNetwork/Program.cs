@@ -7,10 +7,23 @@ using NeuralNetwork.Trainers.Network;
 
 namespace NeuralNetwork
 {
-    internal class Program
+    /// <summary>
+    /// Enterance class
+    /// </summary>
+    public class Program
     {
+        /// <summary>
+        /// Enterance method
+        /// </summary>
+        /// <param name="args">Comand line arguments</param>
         private static void Main(string[] args)
         {
+
+            Console.WriteLine(
+                new System.Text.RegularExpressions.Regex("^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$")
+                    .Matches(Console.ReadLine()).Cast<System.Text.RegularExpressions.Capture>().Select(x=>x.Value).Aggregate((i,j)=> i +" \n" + j) 
+            );
+            Console.ReadLine();
             TrainerManager tm = new TrainerManager();
 
             //ICalculatableNetwork nn2 =
@@ -81,7 +94,6 @@ namespace NeuralNetwork
             //    Console.WriteLine(image);
             //    Console.ReadLine();
             //}
-
             Console.ReadLine();
         }
     }

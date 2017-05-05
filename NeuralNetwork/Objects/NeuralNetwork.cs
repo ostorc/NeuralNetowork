@@ -5,17 +5,44 @@ using NeuralNetwork.MINST.Processing;
 
 namespace NeuralNetwork.Objects
 {
+    /// <summary>
+    /// Neurla network
+    /// </summary>
     [Serializable]
     public sealed class NeuralNetwork : ILearnableNetwork, ICalculatableImageNetwork
     {
+        /// <summary>
+        /// Number of input neurons
+        /// </summary>
         public int NumberOfInputs { get; }
+        /// <summary>
+        /// Number of  hidden neurons
+        /// </summary>
         public int NumberOfHidden { get; }
+        /// <summary>
+        /// Number of output neurons
+        /// </summary>
         public int NumberOfOutputs { get; }
+        /// <summary>
+        /// Internal biases 
+        /// </summary>
         internal double[][] InputToHiddenNeuronBiases { get; }
+        /// <summary>
+        /// Internal biases
+        /// </summary>
         internal double[][] HiddenOutputsToOutputBiases { get; }
+        /// <summary>
+        /// Learning rate of neural netowrk
+        /// </summary>
         public double LearningRate { get; }
 
-
+        /// <summary>
+        /// Constructor of neural network <see cref="NeuralNetwork"/>
+        /// </summary>
+        /// <param name="numberOfHidden">Number of hidden neurons</param>
+        /// <param name="numberOfInputs">Number of inputs</param>
+        /// <param name="numberOfOutputs">Number of outputs</param>
+        /// <param name="learningRate">Learning rate</param>
         public NeuralNetwork(int numberOfHidden, int numberOfInputs, int numberOfOutputs, double learningRate)
         {
             NumberOfInputs = numberOfInputs;
@@ -33,12 +60,23 @@ namespace NeuralNetwork.Objects
                     Enumerable.Range(0, NumberOfHidden + 1).Select(x => Helpers.Random.NextDouble() * 2 - 1).ToArray();
         }
 
+        /// <summary>
+        /// Calucalte values
+        /// </summary>
+        /// <param name="input">Input values</param>
+        /// <returns>Caluclated values</returns>
         public double[] Calculate(params double[] input)
         {
             double[] data;
             return Calculate(out data, input);
         }
 
+        /// <summary>
+        /// Learn on given values
+        /// </summary>
+        /// <param name="values">Input values</param>
+        /// <param name="target">Target output values</param>
+        /// <returns></returns>
         public double[] Learn(double[] values, double[] target)
         {
             double[] hidden;
@@ -112,12 +150,21 @@ namespace NeuralNetwork.Objects
             return output;
         }
 
+        /// <summary>
+        /// Return number of calculated number
+        /// </summary>
+        /// <param name="image">Input data</param>
+        /// <returns>Calculated number</returns>
         public byte GetNumber(double[] image)
         {
             var data = Calculate(image).ToList();
             return (byte)data.IndexOf(data.Max());
         }
-
+        /// <summary>
+        /// Return number of calculated number
+        /// </summary>
+        /// <param name="image">Input image</param>
+        /// <returns>Calculated number</returns>
         public byte GetNumber(DigitImage image)
         {
             var data = Calculate(image.ToDoubleArray()).ToList();
